@@ -1,0 +1,16 @@
+{
+  "siteName": "Neural Numbers",
+  "siteDescription": "",
+  "siteURL": "https://exhibit.i-am.ai/futurium/neural-numbers-mini",
+  "basePath": "/",
+  "contactEmail": "info@imaginary.org",
+  "defaultLanguage": "en",
+  "languages": {
+    "en": {
+      "name": "English"
+    },
+    "de": {
+      "name": "Deutsch"
+    }
+  }
+}

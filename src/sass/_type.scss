@@ -1,0 +1,11 @@
+@mixin regularFont {
+  @include openSansRegular;
+}
+
+@mixin headingFont {
+  @include SpaceMonoBold;
+}
+
+@mixin subheadingFont {
+  @include SofiaSansExtraCondensedRegular;
+}

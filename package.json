@@ -1,0 +1,55 @@
+{
+  "name": "neural-numbers-mini",
+  "version": "1.0.0",
+  "description": "Portable version of Neural Numbers for use as a suitcase exhibit",
+  "repository": "github:IMAGINARY/neural-numbers-mini",
+  "author": "Eric Londaits <eric.londaits@imaginary.org>",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.16.0"
+  },
+  "dependencies": {
+    "@babel/core": "^7.19.1",
+    "@babel/preset-env": "^7.19.1",
+    "@babel/preset-react": "^7.18.6",
+    "autoprefixer": "^10.4.12",
+    "babel-loader": "^8.2.5",
+    "bootstrap": "5",
+    "core-js": "^3.25.2",
+    "cssnano": "^5.1.13",
+    "del": "^6.0.0",
+    "dotenv": "^16.0.2",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-if": "^3.0.0",
+    "gulp-postcss": "^9.0.1",
+    "gulp-pug": "^4.0.1",
+    "gulp-rename": "^1.4.0",
+    "gulp-rev": "^9.0.0",
+    "gulp-sass": "^5.1.0",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-touch-fd": "^2.0.0",
+    "jquery": "^3.6.0",
+    "simple-git": "^3.18.0",
+    "sass": "^1.49.9",
+    "shelljs": "^0.8.5",
+    "webpack": "^5.74.0",
+    "webpack-assets-manifest": "^5.1.0",
+    "webpack-bundle-analyzer": "^4.6.1",
+    "webpack-stream": "^7.0.0"
+  },
+  "vendor": {
+    "neural-numbers": {
+      "tag": "v1.2.3",
+      "repository": "https://github.com/IMAGINARY/neural-numbers.git"
+    }
+  },
+  "scripts": {
+    "postinstall": "node ./scripts/postinstall.js",
+    "build": "npx gulp build",
+    "build:dev": "NODE_ENV=development npx gulp build",
+    "watch": "NODE_ENV=development npx gulp build && npx gulp watch",
+    "copy files": "npx gulp vendorFiles",
+    "webpack:stats": "WEBPACK_STATS=1 npx gulp scripts && webpack-bundle-analyzer stats/webpack.stats.json dist/assets/js"
+  }
+}

@@ -1,0 +1,40 @@
+- setLang(fileLang(compiler.file.relative))
+- let showHeader = true;
+- let showFooterLogos = true;
+- let showFooter = false;
+- bodyClasses = []
+- bodyClasses.push(`page-lang-${getLang()}`)
+- bodyClasses.push(`page-${compiler.file.stem}`)
+block init
+doctype html
+html(lang!=getLang())
+  head
+    block prehead
+    meta(charset="utf-8")
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(property="og:url", content!=filename ? url(filename):config.siteURL)
+    meta(property="og:type", content="website")
+    meta(property="og:title", content!=title || config.siteName)
+    meta(property="og:site_name", content!=config.siteName)
+    meta(property="og:image", content!=config.siteURL + "/assets/img/og.png")
+    meta(name="description", content!=description || config.siteDescription)
+    meta(property="og:description", content!=description || config.siteDescription)
+    each url, lang  in getAlternates(compiler.file.stem)
+      link(rel='alternate', hreflang!=lang, href!=url)
+    block meta
+    link(rel="icon", type="image/ico", href="/static/img-web/favicon.png")
+    link(rel="stylesheet", href="/vendor/bootstrap/bootstrap.min.css")
+    link(rel='stylesheet', href!=asset('/assets/css/fonts.css'), media='all', type='text/css')
+    link(rel='stylesheet', href!=asset('/assets/css/default.css'), media='all', type='text/css')
+    block stylesheets
+    script(async, defer, data-domain="muski.io", src="https://plausible.io/js/plausible.js")
+    title
+      != (title ? title + ' - ' + config.siteName : config.siteName + slogan )
+    block head
+  body(class!=bodyClasses.join(' '))
+    block body
+    script(src="/vendor/jquery/jquery.slim.min.js")
+    script(src="/vendor/bootstrap/bootstrap.bundle.min.js")
+    script(type="text/javascript", src!=asset("/assets/js/default.js"))
+    block scripts
+    block closing

@@ -1,0 +1,15 @@
+{
+  "copy": [
+    ["static/*", "dist/static/"],
+    ["vendor/*", "dist/vendor/"],
+    ["node_modules/bootstrap/dist/css/bootstrap.min.css", "dist/vendor/bootstrap/bootstrap.min.css"],
+    ["node_modules/bootstrap/dist/css/bootstrap.min.css.map", "dist/vendor/bootstrap/bootstrap.min.css.map"],
+    ["node_modules/bootstrap/dist/js/bootstrap.bundle.min.js", "dist/vendor/bootstrap/bootstrap.bundle.min.js"],
+    ["node_modules/bootstrap/dist/js/bootstrap.bundle.min.js.map", "dist/vendor/bootstrap/bootstrap.bundle.min.js.map"],
+    ["node_modules/jquery/dist/jquery.min.js", "dist/vendor/jquery/jquery.min.js"],
+    ["node_modules/jquery/dist/jquery.min.map", "dist/vendor/jquery/jquery.min.map"],
+    ["node_modules/jquery/dist/jquery.slim.min.js", "dist/vendor/jquery/jquery.slim.min.js"],
+    ["node_modules/jquery/dist/jquery.slim.min.map", "dist/vendor/jquery/jquery.slim.min.map"],
+    ["node_modules/bootstrap-select/dist/*", "dist/vendor/bootstrap-select/"]
+  ]
+}

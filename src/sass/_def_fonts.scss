@@ -1,0 +1,13 @@
+$font-stack-open-sans: 'Open Sans', Helvetica, Arial, sans-serif;
+$font-stack-space-mono: 'Space Mono', monospace, sans-serif;
+$font-stack-sophia-sans-extra-condensed: 'Sofia Sans Extra Condensed', Helvetica, Arial, sans-serif;
+
+@mixin openSans { font-family: $font-stack-open-sans; }
+@mixin openSansRegular { font-family: $font-stack-open-sans; font-weight: 400; }
+@mixin openSansLight { font-family: $font-stack-open-sans; font-weight: 300; }
+@mixin openSansSemiBold { font-family: $font-stack-open-sans; font-weight: 600; }
+@mixin openSansBold { font-family: $font-stack-open-sans; font-weight: 700; }
+
+@mixin SpaceMonoBold { font-family: $font-stack-space-mono; font-weight: 700; }
+@mixin SofiaSansExtraCondensedRegular { font-family: $font-stack-sophia-sans-extra-condensed; font-weight: 400; }
+@mixin SofiaSansExtraCondensedBold { font-family: $font-stack-sophia-sans-extra-condensed; font-weight: 700; }

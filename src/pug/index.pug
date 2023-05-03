@@ -2,5 +2,18 @@ extends tpl/page
 
 block init
 
+block stylesheets-lib
+  link(rel="stylesheet", href="vendor/neural-numbers-v1.2.3/assets/css/neural-numbers.css", media="all", type="text/css")
+
+block scripts-lib
+  script(src="vendor/neural-numbers-v1.2.3/vendor/tf/tf.min.js")
+  script(src="vendor/neural-numbers-v1.2.3/assets/js/dependencies.min.js")
+  script(src="vendor/neural-numbers-v1.2.3/assets/js/neural-numbers.min.js")
+
 block main
-  h1 Hello World
+  div(
+    data-component="neural-numbers",
+    data-model="/vendor/neural-numbers-v1.2.3/assets/models/my-model.json",
+    data-show-bars="true"
+    data-input-placeholder="<div class='placeholder-i18n de'>Schreib eine Zahl zwischen 0 und 9</div><div class='placeholder-i18n en'>Write a number between 0 and 9</div>"
+    )

@@ -1,0 +1,22 @@
+body {
+  background-color: $c-black;
+  color: $c-white;
+}
+
+.neural-numbers-component {
+  @include defaultFont;
+
+  .drawcanvas {
+    filter: none;
+  }
+
+  .output-wrapper {
+    &:before {
+      background-color: $c-black;
+    }
+
+    .output {
+      color: $c-white;
+    }
+  }
+}

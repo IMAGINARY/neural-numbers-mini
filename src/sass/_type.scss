@@ -1,11 +1,11 @@
+@mixin defaultFont {
+  @include roboto;
+}
+
 @mixin regularFont {
-  @include openSansRegular;
+  @include robotoRegular;
 }
 
 @mixin headingFont {
-  @include SpaceMonoBold;
-}
-
-@mixin subheadingFont {
-  @include SofiaSansExtraCondensedRegular;
+  @include robotoBold;
 }

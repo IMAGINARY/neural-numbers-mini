@@ -10,6 +10,13 @@ body {
     filter: none;
   }
 
+  .stage-input.background {
+    .input-placeholder {
+      color: $c-white;
+      opacity: 0.85;
+    }
+  }
+
   .output-wrapper {
     &:before {
       background-color: $c-black;

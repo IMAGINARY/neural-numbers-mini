@@ -7,8 +7,11 @@ const data = {};
 let lang = config.defaultLanguage;
 
 function str(id) {
-  if (localizedStrings[id] !== undefined && localizedStrings[id][lang] !== undefined) {
-    return localizedStrings[id][lang];
+  if (localizedStrings[id] !== undefined) {
+    if(localizedStrings[id][lang] !== undefined) {
+      return localizedStrings[id][lang];
+    }
+    return localizedStrings[id];
   }
   return id;
 }

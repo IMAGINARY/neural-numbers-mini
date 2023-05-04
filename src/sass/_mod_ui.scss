@@ -1,0 +1,15 @@
+.neural-numbers-component {
+  .input-placeholder {
+    line-height: 1.15;
+
+    .placeholder-i18n.de {
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+
+    .placeholder-i18n.en {
+      font-size: 1.2rem;
+      margin-top: 0.9rem;
+    }
+  }
+}

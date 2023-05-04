@@ -15,5 +15,5 @@ block main
     data-component="neural-numbers",
     data-model="/vendor/neural-numbers-v1.2.3/assets/models/my-model.json",
     data-show-bars="true"
-    data-input-placeholder="<div class='placeholder-i18n de'>Schreib eine Zahl zwischen 0 und 9</div><div class='placeholder-i18n en'>Write a number between 0 and 9</div>"
+    data-input-placeholder!=`<div class='placeholder-i18n de'>${str('input-placeholder-de')}</div><div class='placeholder-i18n en'>${str('input-placeholder-en')}</div>`
     )

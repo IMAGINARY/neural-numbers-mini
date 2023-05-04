@@ -30,7 +30,7 @@ html(lang!=getLang())
     block stylesheets
     script(async, defer, data-domain="muski.io", src="https://plausible.io/js/plausible.js")
     title
-      != (title ? title + ' - ' + config.siteName : config.siteName + slogan )
+      != (title ? title + ' - ' + config.siteName : config.siteName + (slogan ? slogan : '') )
     block head
   body(class!=bodyClasses.join(' '))
     block body

@@ -6,6 +6,10 @@ body {
 .neural-numbers-component {
   @include defaultFont;
 
+  .input-canvas-wrapper {
+    border: 4px dashed $c-gray;
+  }
+
   .drawcanvas {
     filter: none;
   }
@@ -18,12 +22,20 @@ body {
   }
 
   .output-wrapper {
+    background: radial-gradient(110px, $c-blue-shadow, transparent);
     &:before {
       background-color: $c-black;
     }
 
     .output {
       color: $c-white;
+    }
+  }
+
+  .bars {
+    .bar {
+      border-color: black;
+      background: linear-gradient(90deg, $c-blue-shadow, $c-blue);
     }
   }
 }

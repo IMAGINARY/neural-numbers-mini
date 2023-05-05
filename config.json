@@ -1,7 +1,7 @@
 {
   "siteName": "Neural Numbers",
   "siteDescription": "",
-  "siteURL": "https://exhibit.i-am.ai/futurium/neural-numbers-mini",
+  "siteURL": "https://exhibits.imaginary.org/futurium/neural-numbers-mini",
   "basePath": "/",
   "contactEmail": "info@imaginary.org",
   "defaultLanguage": "en",
@@ -12,5 +12,8 @@
     "de": {
       "name": "Deutsch"
     }
-  }
+  },
+  "model": "/vendor/neural-numbers-dev/assets/models/my-model.json",
+  "inputPlaceholder_de": "Schreib eine Zahl zwischen 0&nbsp;und&nbsp;9",
+  "inputPlaceholder_en": "Write a number between 0&nbsp;and&nbsp;9"
 }

@@ -28,7 +28,6 @@ html(lang!=getLang())
     link(rel='stylesheet', href!=asset('/assets/css/fonts.css'), media='all', type='text/css')
     link(rel='stylesheet', href!=asset('/assets/css/default.css'), media='all', type='text/css')
     block stylesheets
-    script(async, defer, data-domain="muski.io", src="https://plausible.io/js/plausible.js")
     title
       != (title ? title + ' - ' + config.siteName : config.siteName + (slogan ? slogan : '') )
     block head

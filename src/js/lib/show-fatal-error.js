@@ -3,13 +3,16 @@ function showFatalError(text, error) {
     .addClass('fatal-error')
     .append($('<div></div>')
       .addClass('fatal-error-text')
-      .html(text))
+      .text(text))
     .append($('<div></div>')
       .addClass('fatal-error-details')
-      .html(error.message))
+      .text(error.message))
+    .append($('<div></div>')
+      .addClass('fatal-error-stack')
+      .text(error.stack))
     .appendTo('body');
 
   $('html').addClass('with-fatal-error');
 }
 
-module.exports = showFatalError;
+export default showFatalError;

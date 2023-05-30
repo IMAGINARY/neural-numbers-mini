@@ -11,7 +11,17 @@ block scripts-lib
   script(src="vendor/neural-numbers/assets/js/neural-numbers.min.js")
 
 block main
-  #neural-numbers-container
-  #training-panel
-    h2.training-title
-    #neural-numbers-training-ui-container
+  .loader
+    .lds-ellipsis
+      div
+      div
+      div
+      div
+  .loader-hide
+    #neural-numbers-container
+    #training-panel
+      button#training-mode-button
+        h2.training-title
+      #training-panel-separator
+      #training-controls
+        #neural-numbers-training-ui-container

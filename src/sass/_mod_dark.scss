@@ -22,11 +22,6 @@ body {
   }
 
   .output-wrapper {
-    background: radial-gradient(110px, $c-blue-shadow, transparent);
-    &:before {
-      background-color: $c-black;
-    }
-
     .output {
       color: $c-white;
     }

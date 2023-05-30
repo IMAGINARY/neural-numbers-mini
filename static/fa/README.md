@@ -7,4 +7,5 @@ Font Awesome 6.4.0 by @fontawesome - https://fontawesome.com
 
 The original files were modified as follows:
 
-
+- chevron-down-solid: Recolored
+- exclamation-triangle-solid: Recolored

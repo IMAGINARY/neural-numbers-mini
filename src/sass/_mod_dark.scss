@@ -18,7 +18,6 @@ body {
     .input-placeholder {
       color: $c-white;
       opacity: 0.85;
-      margin: 4px;
     }
   }
 
@@ -38,5 +37,13 @@ body {
       border-color: black;
       background: linear-gradient(90deg, $c-blue-shadow, $c-blue);
     }
+  }
+}
+
+.neural-numbers-training-component {
+  background-color: transparent;
+
+  .btn {
+    border: none;
   }
 }

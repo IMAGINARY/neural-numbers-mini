@@ -8,7 +8,7 @@ async function fetchFromGit(repository, path) {
 
 Object.keys(packageJson.vendor).forEach(async (key) => {
   const props = packageJson.vendor[key];
-  const path = `./vendor/${key}-${props.tag}`;
+  const path = `./vendor/${key}`;
   if (!fs.existsSync(path)) {
     await degit(props.repository, { cache: false, force: true }).clone(path);
   }

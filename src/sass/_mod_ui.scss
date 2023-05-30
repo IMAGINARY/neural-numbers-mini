@@ -1,15 +1,86 @@
+.training-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+
+  .en {
+    font-size: 1.2rem;
+    font-weight: normal;
+  }
+}
+
 .neural-numbers-component {
+  .input-canvas-wrapper {
+    border-width: 8px !important;
+  }
+
   .input-placeholder {
     line-height: 1.15;
+    color: $c-gray-text !important;
 
     .placeholder-i18n.de {
-      font-size: 1.2rem;
+      font-size: 2rem;
       font-weight: bold;
+      margin-bottom: 0.8em;
     }
 
     .placeholder-i18n.en {
-      font-size: 1.2rem;
+      font-size: 1.6rem;
       margin-top: 0.9rem;
     }
   }
+}
+
+.neural-numbers-training-component {
+  .image-count-label,
+  .accuracy-label {
+    font-size: 1.1rem;
+    text-align: left;
+    margin-right: 0.75rem;
+
+    .en {
+      font-weight: normal;
+    }
+  }
+
+  .image-count-value {
+    margin-top: -0.25rem;
+  }
+
+  .accuracy-value {
+    padding: 0;
+    margin-top: -0.25rem;
+    text-align: left;
+    color: $c-green;
+
+    &[data-ranking='mediocre'] {
+      color: $c-yellow;
+    }
+
+    &[data-ranking='bad'] {
+      color: $c-red;
+    }
+  }
+}
+
+.bars {
+  height: auto !important;
+
+  .bartxt {
+    font-size: 1.5rem;
+    margin-right: 0.2rem;
+    margin-top: 0;
+  }
+
+  .barcontainer {
+    margin-bottom: 0.4rem;
+  }
+
+  .bar {
+    height: 1.5rem;
+  }
+}
+
+.stage-output {
+  margin-left: -100px;
 }

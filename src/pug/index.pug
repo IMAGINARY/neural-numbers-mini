@@ -3,12 +3,15 @@ extends tpl/page
 block init
 
 block stylesheets-lib
-  link(rel="stylesheet", href="vendor/neural-numbers-dev/assets/css/neural-numbers.css", media="all", type="text/css")
+  link(rel="stylesheet", href="vendor/neural-numbers/assets/css/neural-numbers.css", media="all", type="text/css")
 
 block scripts-lib
-  script(src="vendor/neural-numbers-dev/vendor/tf/tf.min.js")
-  script(src="vendor/neural-numbers-dev/assets/js/dependencies.min.js")
-  script(src="vendor/neural-numbers-dev/assets/js/neural-numbers.min.js")
+  script(src="vendor/neural-numbers/vendor/tf/tf.min.js")
+  script(src="vendor/neural-numbers/assets/js/dependencies.min.js")
+  script(src="vendor/neural-numbers/assets/js/neural-numbers.min.js")
 
 block main
-  div(data-component="neural-numbers-container")
+  #neural-numbers-container
+  #training-panel
+    h2.training-title
+    #neural-numbers-training-ui-container

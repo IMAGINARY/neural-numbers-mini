@@ -1,0 +1,58 @@
+$input-size: 350px;
+
+.neural-numbers-component {
+  height: auto;
+  margin-top: 100px;
+
+  .input-canvas-wrapper {
+    width: $input-size;
+    height: $input-size;
+  }
+
+  .drawcanvas {
+    height: $input-size;
+    width: $input-size;
+  }
+
+  .input-placeholder {
+    width: $input-size;
+    height: $input-size;
+
+    span {
+      display: block;
+      width: 100%;
+    }
+
+    .placeholder-i18n {
+      display: block;
+    }
+  }
+}
+
+#training-panel {
+  position: fixed;
+  bottom: 0;
+  padding: 1rem 1.25rem 1.5rem;
+  height: auto;
+  width: 90%;
+  margin: 0 5%;
+  border-radius: 1.5rem 1.5rem 0 0;
+  background-color: $c-gray-dark;
+}
+
+.neural-numbers-training-component {
+  justify-content: space-between;
+
+  .start-pause-btn {
+    width: 6rem;
+    height: 6rem;
+    margin-right: 0.5rem;
+  }
+
+  .reset-btn,
+  .step-btn {
+    width: 4rem;
+    height: 4rem;
+  }
+}
+

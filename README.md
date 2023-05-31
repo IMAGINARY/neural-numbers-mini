@@ -6,7 +6,7 @@ Portable version of Neural Numbers for use as a suitcase exhibit
 
 This project uses [Sentry](https://sentry.io) to track errors in production.
 
-Unhandled exceptions and console messages (error and warn) will be sent if the Sentry DSN is set. 
+Unhandled exceptions and console.error messages will be sent if the Sentry DSN is set. 
 
 The Sentry DSN will be read from:
 - The `sentry-dsn` query string argument. (Read from the browser)

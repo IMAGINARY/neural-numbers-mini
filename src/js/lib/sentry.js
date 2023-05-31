@@ -17,7 +17,7 @@ if (sentryDSN) {
     integrations: [new CaptureConsoleIntegration({
       // array of methods that should be captured
       // defaults to ['log', 'info', 'warn', 'error', 'debug', 'assert']
-      levels: ['warn', 'error'],
+      levels: ['error'],
     })],
   })
 }

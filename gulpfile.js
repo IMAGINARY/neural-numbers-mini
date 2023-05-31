@@ -1,4 +1,5 @@
 const path = require('path');
+const childProcess = require('child_process');
 require('dotenv').config();
 const gulp = require('gulp');
 const pug = require('gulp-pug');
@@ -27,6 +28,11 @@ const { series, parallel } = gulp;
 const OUTPUT_DIR = './dist';
 const ASSET_MANIFEST = `${OUTPUT_DIR}/assets/rev-manifest.json`;
 const WEBPACK_MANIFEST = `${OUTPUT_DIR}/assets/webpack-manifest.json`;
+const GIT_COMMIT_HASH = revision = childProcess.execSync('git rev-parse HEAD').toString().trim();
+
+if (!process.env.GIT_COMMIT_HASH) {
+  process.env.GIT_COMMIT_HASH = GIT_COMMIT_HASH;
+}
 
 const targets = {
   html: {
@@ -162,8 +168,8 @@ function js(target) {
         }),
         new webpack.DefinePlugin({
           'process.env.STATIC_FILE_BASEPATH': JSON.stringify(process.env.STATIC_FILE_BASEPATH),
-          'process.env.GOOGLE_MAPS_API_KEY': JSON.stringify(process.env.GOOGLE_MAPS_API_KEY),
-          'process.env.MAPBOX_API_KEY': JSON.stringify(process.env.MAPBOX_API_KEY),
+          'process.env.SENTRY_DSN': JSON.stringify(process.env.SENTRY_DSN),
+          'process.env.GIT_COMMIT_HASH': JSON.stringify(process.env.GIT_COMMIT_HASH),
         }),
       ],
       devtool: 'source-map',

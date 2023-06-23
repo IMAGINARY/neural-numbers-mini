@@ -1,13 +1,7 @@
-const config = require('../../../config.json');
 import * as Sentry from '@sentry/browser';
 import { CaptureConsole as CaptureConsoleIntegration } from "@sentry/integrations";
 
-// Search for the sentry-dsn key in the Query String
-const urlParams = new URLSearchParams(window.location.search);
-
-const sentryDSN = urlParams.get('sentry-dsn') || config.sentryDSN || process.env.SENTRY_DSN;
-
-if (sentryDSN) {
+export function initSentry(sentryDSN) {
   Sentry.init({
     dsn: sentryDSN,
     release: process.env.GIT_COMMIT_HASH,

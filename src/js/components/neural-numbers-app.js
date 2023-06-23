@@ -1,6 +1,6 @@
 export default class NeuralNumbersApp {
   constructor(container, props) {
-    this.trainingPanelOpen = false;
+    this.trainingPanelOpen = true;
 
     this.$element = $('<div>')
       .attr('id', 'neural-numbers-container')
@@ -70,45 +70,52 @@ export default class NeuralNumbersApp {
   }
 
   closeTrainingPanel(animated = true) {
-    if (!animated) {
-      // Temporarily disable CSS transitions
-      this.$trainingPanel.addClass('no-transition');
-      this.$element.addClass('no-transition');
-    }
-    // Add a negative bottom margin to #training-panel so that #training-panel-separator
-    // is at the bottom edge of the screen
-    const offset = this.$trainingPanel.outerHeight() - this.$trainingPanelSeparator.position().top;
-    this.$trainingPanel.css('margin-bottom', -offset);
-    this.$trainingPanel.addClass('closed');
-    this.trainingPanelOpen = false;
+    if (this.trainingPanelOpen) {
+      this.nnTrainingComponent.trainingController.pause();
 
-    const margin = (
-      $(window).height()
-      - this.$element.outerHeight()
-      - this.$trainingPanelSeparator.position().top
-    ) / 2;
-    this.$element.css('margin-top', margin);
+      if (!animated) {
+        // Temporarily disable CSS transitions
+        this.$trainingPanel.addClass('no-transition');
+        this.$element.addClass('no-transition');
+      }
+      // Add a negative bottom margin to #training-panel so that #training-panel-separator
+      // is at the bottom edge of the screen
+      const offset = this.$trainingPanel.outerHeight()
+        - this.$trainingPanelSeparator.position().top;
+      this.$trainingPanel.css('margin-bottom', -offset);
+      this.$trainingPanel.addClass('closed');
+      this.trainingPanelOpen = false;
 
-    this.nnTrainingComponent.trainingController.useDefaultModel();
+      const margin = (
+        $(window).height()
+        - this.$element.outerHeight()
+        - this.$trainingPanelSeparator.position().top
+      ) / 2;
+      this.$element.css('margin-top', margin);
 
-    if (!animated) {
-      this.$trainingPanel.removeClass('no-transition');
-      this.$element.removeClass('no-transition');
+      this.nnTrainingComponent.trainingController.useDefaultModel();
+
+      if (!animated) {
+        this.$trainingPanel.removeClass('no-transition');
+        this.$element.removeClass('no-transition');
+      }
     }
   }
 
   openTrainingPanel() {
-    this.$trainingPanel.css('margin-bottom', 0);
-    this.$trainingPanel.removeClass('closed');
-    this.trainingPanelOpen = true;
+    if (!this.trainingPanelOpen) {
+      this.$trainingPanel.css('margin-bottom', 0);
+      this.$trainingPanel.removeClass('closed');
+      this.trainingPanelOpen = true;
 
-    const margin = (
-      $(window).height()
-      - this.$element.outerHeight()
-      - this.$trainingPanel.outerHeight()
-    ) / 2;
-    this.$element.css('margin-top', margin);
+      const margin = (
+        $(window).height()
+        - this.$element.outerHeight()
+        - this.$trainingPanel.outerHeight()
+      ) / 2;
+      this.$element.css('margin-top', margin);
 
-    this.nnTrainingComponent.trainingController.useTrainableModel();
+      this.nnTrainingComponent.trainingController.useTrainableModel();
+    }
   }
 }

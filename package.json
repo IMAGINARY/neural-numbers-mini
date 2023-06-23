@@ -43,7 +43,7 @@
   },
   "vendor": {
     "neural-numbers": {
-      "tag": "v1.3.4",
+      "tag": "v1.4.0",
       "repository": "https://github.com/IMAGINARY/neural-numbers.git"
     }
   },

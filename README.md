@@ -15,6 +15,17 @@ The Sentry DSN will be read from:
 
 To enable Sentry, set the `SENTRY_DSN` environment variable to your Sentry DSN.
 
+## Idle timeout
+
+The app will automatically close the training panel after a period of inactivity.
+
+The timeout duration (in seconds) can be set through:
+- The `idle-timeout` query string argument. (Read from the browser)
+- The `idleTimeout` key in config.json. (Read at build-time only)
+- The `IDLE_TIMEOUT` environment variable. (Read at build-time only)
+
+The default value is 60 seconds.  Set to 0 to disable the timeout.
+
 ## Credits
 
 Adapted by [Eric Londaits](https://github.com/elondaits) 

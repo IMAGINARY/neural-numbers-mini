@@ -12,10 +12,10 @@
     ["node_modules/jquery/dist/jquery.slim.min.map", "dist/vendor/jquery/jquery.slim.min.map"],
     ["node_modules/bootstrap-select/dist/*", "dist/vendor/bootstrap-select/"],
     ["node_modules/@fontsource/roboto/latin-400.css", "dist/vendor/roboto/latin-400.css"],
-    ["node_modules/@fontsource/roboto/latin-700.css", "dist/vendor/roboto/latin-700.css"],
+    ["node_modules/@fontsource/roboto/latin-500.css", "dist/vendor/roboto/latin-500.css"],
     ["node_modules/@fontsource/roboto/files/roboto-latin-400-normal.woff", "dist/vendor/roboto/files/roboto-latin-400-normal.woff"],
     ["node_modules/@fontsource/roboto/files/roboto-latin-400-normal.woff2", "dist/vendor/roboto/files/roboto-latin-400-normal.woff2"],
-    ["node_modules/@fontsource/roboto/files/roboto-latin-700-normal.woff", "dist/vendor/roboto/files/roboto-latin-700-normal.woff"],
-    ["node_modules/@fontsource/roboto/files/roboto-latin-700-normal.woff2", "dist/vendor/roboto/files/roboto-latin-700-normal.woff2"]
+    ["node_modules/@fontsource/roboto/files/roboto-latin-500-normal.woff", "dist/vendor/roboto/files/roboto-latin-500-normal.woff"],
+    ["node_modules/@fontsource/roboto/files/roboto-latin-500-normal.woff2", "dist/vendor/roboto/files/roboto-latin-500-normal.woff2"]
   ]
 }

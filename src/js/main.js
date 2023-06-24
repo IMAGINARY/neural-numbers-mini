@@ -19,7 +19,7 @@ $('[data-component=neural-numbers-app]').each(async (index, element) => {
       $('body').addClass('loaded');
     }, 500);
 
-    const idleTimeout = urlParams.get('idle-timeout') || config.idleTimeout || process.env.IDLE_TIMEOUT || 60;
+    const idleTimeout = Number(urlParams.get('idle-timeout') || config.idleTimeout || process.env.IDLE_TIMEOUT || 60);
     if (idleTimeout) {
       installIdleHandler(() => {
         app.closeTrainingPanel();

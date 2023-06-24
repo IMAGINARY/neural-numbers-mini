@@ -1,5 +1,5 @@
 @mixin defaultFont {
-  @include roboto;
+  @include robotoRegular;
 }
 
 @mixin regularFont {
@@ -7,5 +7,5 @@
 }
 
 @mixin headingFont {
-  @include robotoBold;
+  @include robotoMedium;
 }

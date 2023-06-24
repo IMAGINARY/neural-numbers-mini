@@ -31,15 +31,15 @@
 
 .training-title {
   position: relative;
-  font-size: 1.5rem;
-  font-weight: bold;
+  font-size: 1.6rem;
+  font-weight: 500;
   margin-bottom: 1rem;
   margin-left: 0.5rem;
   color: white;
   text-align: left;
 
   .en {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     font-weight: normal;
   }
 
@@ -78,13 +78,13 @@
     color: $c-gray-text !important;
 
     .placeholder-i18n.de {
-      font-size: 2rem;
-      font-weight: bold;
+      font-size: 1.8rem;
+      font-weight: 500;
       margin-bottom: 0.8em;
     }
 
     .placeholder-i18n.en {
-      font-size: 1.6rem;
+      font-size: 1.5rem;
       margin-top: 0.9rem;
     }
   }

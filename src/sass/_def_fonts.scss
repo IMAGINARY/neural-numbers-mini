@@ -2,4 +2,5 @@ $font-stack-roboto: 'Roboto', Helvetica, Arial, sans-serif;
 
 @mixin roboto { font-family: $font-stack-roboto; }
 @mixin robotoRegular { font-family: $font-stack-roboto; font-weight: 400; }
+@mixin robotoMedium { font-family: $font-stack-roboto; font-weight: 500; }
 @mixin robotoBold { font-family: $font-stack-roboto; font-weight: 700; }

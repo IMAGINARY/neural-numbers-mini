@@ -1,13 +1,14 @@
-const config = require('../../config.json');
 import showFatalError from './lib/show-fatal-error';
 import NeuralNumbersApp from './components/neural-numbers-app';
 import { initSentry } from './lib/sentry';
 import { installIdleHandler } from './lib/idle';
 
+const config = require('../../config.json');
+
 const urlParams = new URLSearchParams(window.location.search);
 const sentryDSN = urlParams.get('sentry-dsn') || config.sentryDSN || process.env.SENTRY_DSN;
 
-if(sentryDSN) {
+if (sentryDSN) {
   initSentry(sentryDSN);
 }
 
@@ -25,10 +26,9 @@ $('[data-component=neural-numbers-app]').each(async (index, element) => {
         app.closeTrainingPanel();
       }, idleTimeout);
     }
-  } catch(error) {
+  } catch (error) {
     showFatalError('Unexpected error', error);
     // Throw it again to make sure it gets logged to Sentry
     throw error;
   }
 });
-

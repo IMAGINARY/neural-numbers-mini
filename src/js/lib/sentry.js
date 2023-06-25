@@ -1,6 +1,7 @@
 import * as Sentry from '@sentry/browser';
-import { CaptureConsole as CaptureConsoleIntegration } from "@sentry/integrations";
+import { CaptureConsole as CaptureConsoleIntegration } from '@sentry/integrations';
 
+// eslint-disable-next-line import/prefer-default-export
 export function initSentry(sentryDSN) {
   Sentry.init({
     dsn: sentryDSN,

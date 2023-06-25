@@ -1,3 +1,5 @@
+/* globals IMAGINARY */
+
 export default class NeuralNumbersApp {
   constructor(container, props) {
     this.trainingPanelOpen = true;
@@ -21,7 +23,7 @@ export default class NeuralNumbersApp {
       })
       .appendTo(this.$trainingPanel);
 
-    this.$trainingTitle = $('<h2>')
+    $('<h2>')
       .addClass('training-title')
       .html(`<div class='training-title-i18n de'>${props.trainingTitle.de}</div><div class='training-title-i18n en'>${props.trainingTitle.en}</div>`)
       .appendTo(this.$trainingModeButton);
@@ -48,7 +50,8 @@ export default class NeuralNumbersApp {
         showTraining: false,
         showOutput: true,
         verticalBars: true,
-      });
+      }
+    );
 
     this.nnTrainingComponent = new IMAGINARY.NeuralNumbersTraining(
       this.nnComponent,

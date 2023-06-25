@@ -169,6 +169,7 @@ function js(target) {
         new webpack.DefinePlugin({
           'process.env.STATIC_FILE_BASEPATH': JSON.stringify(process.env.STATIC_FILE_BASEPATH),
           'process.env.SENTRY_DSN': JSON.stringify(process.env.SENTRY_DSN),
+          'process.env.IDLE_TIMEOUT': JSON.stringify(process.env.IDLE_TIMEOUT),
           'process.env.GIT_COMMIT_HASH': JSON.stringify(process.env.GIT_COMMIT_HASH),
         }),
       ],

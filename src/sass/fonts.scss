@@ -1,4 +1,4 @@
 @use "@fontsource/roboto/scss/mixins" as Roboto;
 
-@include Roboto.fontFace($weight: 400, $display: auto, $fontDir: "/vendor/roboto/files");
-@include Roboto.fontFace($weight: 500, $display: auto, $fontDir: "/vendor/roboto/files");
+@include Roboto.fontFace($weight: 400, $display: auto, $fontDir: "../../vendor/roboto/files");
+@include Roboto.fontFace($weight: 500, $display: auto, $fontDir: "../../vendor/roboto/files");

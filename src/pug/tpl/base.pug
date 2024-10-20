@@ -25,21 +25,21 @@ html(lang!=getLang())
     each url, lang  in getAlternates(compiler.file.stem)
       link(rel='alternate', hreflang!=lang, href!=url)
     block meta
-    link(rel="icon", type="image/ico", href="/static/icons/favicon.png")
-    link(rel="apple-touch-icon", href="/static/icons/apple-touch-icon.png")
-    link(rel="stylesheet", href="/vendor/bootstrap/bootstrap.min.css")
+    link(rel="icon", type="image/ico", href="static/icons/favicon.png")
+    link(rel="apple-touch-icon", href="static/icons/apple-touch-icon.png")
+    link(rel="stylesheet", href="vendor/bootstrap/bootstrap.min.css")
     block stylesheets-lib
-    link(rel='stylesheet', href!=asset('/assets/css/fonts.css'), media='all', type='text/css')
-    link(rel='stylesheet', href!=asset('/assets/css/default.css'), media='all', type='text/css')
+    link(rel='stylesheet', href!=asset('assets/css/fonts.css'), media='all', type='text/css')
+    link(rel='stylesheet', href!=asset('assets/css/default.css'), media='all', type='text/css')
     block stylesheets
     title
       != (title ? title + ' - ' + config.siteName : config.siteName + (slogan ? slogan : '') )
     block head
   body(class!=bodyClasses.join(' '))
     block body
-    script(src="/vendor/jquery/jquery.slim.min.js")
-    script(src="/vendor/bootstrap/bootstrap.bundle.min.js")
+    script(src="vendor/jquery/jquery.slim.min.js")
+    script(src="vendor/bootstrap/bootstrap.bundle.min.js")
     block scripts-lib
-    script(type="text/javascript", src!=asset("/assets/js/default.js"))
+    script(type="text/javascript", src!=asset("assets/js/default.js"))
     block scripts
     block closing

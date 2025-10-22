@@ -1,8 +1,9 @@
 /* globals IMAGINARY */
 
 export default class NeuralNumbersApp {
-  constructor(container, props) {
+  constructor(container, config) {
     this.trainingPanelOpen = true;
+    this.config = config;
 
     this.$element = $('<div>')
       .attr('id', 'neural-numbers-container')
@@ -25,7 +26,7 @@ export default class NeuralNumbersApp {
 
     $('<h2>')
       .addClass('training-title')
-      .html(`<div class='training-title-i18n de'>${props.trainingTitle.de}</div><div class='training-title-i18n en'>${props.trainingTitle.en}</div>`)
+      .html(this.i18nSideBySideElements('training-title-i18n', 'trainingTitle'))
       .appendTo(this.$trainingModeButton);
 
     this.$trainingPanelSeparator = $('<div>')
@@ -43,8 +44,8 @@ export default class NeuralNumbersApp {
     this.nnComponent = new IMAGINARY.NeuralNumbers(
       this.$element,
       {
-        modelPath: props.model,
-        inputPlaceholder: `<div class='placeholder-i18n de'>${props.inputPlaceholder.de}</div><div class='placeholder-i18n en'>${props.inputPlaceholder.en}</div>`,
+        modelPath: config.model,
+        inputPlaceholder: this.i18nSideBySideElements('placeholder-i18n', 'inputPlaceholder'),
         showBars: true,
         showNormalizer: false,
         showTraining: false,
@@ -57,10 +58,10 @@ export default class NeuralNumbersApp {
       this.nnComponent,
       this.$nnTrainingUIContainer,
       {
-        trainingImagePath: props.trainingImagePath,
-        trainingLabelPath: props.trainingLabelPath,
-        imageCountLabelText: `<div class='image-count-label-i18n de'>${props.imageCountLabelText.de}</div><div class='image-count-label-i18n en'>${props.imageCountLabelText.en}</div>`,
-        predictedAccuracyLabelText: `<div class='predicted-accuracy-label-i18n de'>${props.predictedAccuracyLabelText.de}</div><div class='predicted-accuracy-label-i18n en'>${props.predictedAccuracyLabelText.en}</div>`,
+        trainingImagePath: config.trainingImagePath,
+        trainingLabelPath: config.trainingLabelPath,
+        imageCountLabelText: this.i18nSideBySideElements('image-count-label-i18n', 'imageCountLabelText'),
+        predictedAccuracyLabelText: this.i18nSideBySideElements('predicted-accuracy-label-i18n', 'predictedAccuracyLabelText'),
       }
     );
   }
@@ -70,6 +71,12 @@ export default class NeuralNumbersApp {
     await this.nnTrainingComponent.init();
 
     this.closeTrainingPanel(false);
+  }
+
+  i18nSideBySideElements(classname, stringID) {
+    return this.config.sideBySideTranslation.map((lang, idx) => (
+      `<div class='${classname} i18n-lang-${lang}${idx === 0 ? ' i18n-lang-primary' : ''}'>${this.config?.[stringID]?.[lang] ?? ''}</div>`
+    )).join('');
   }
 
   closeTrainingPanel(animated = true) {
